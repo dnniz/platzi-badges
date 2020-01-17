@@ -4,8 +4,8 @@ import Badge from "./components/Badge";
 
 const container = document.getElementById("app");
 
-var tettsuo = () => {
-  return alert("clickme");
-};
+// var tettsuo = () => {
+//   return alert("clickme");
+// };
 
 ReactDOM.render(<Badge />, container);
