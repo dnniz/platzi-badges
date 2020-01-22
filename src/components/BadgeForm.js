@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class BadgeForm extends React.Component {
-
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -20,7 +20,7 @@ class BadgeForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h1>New Attendant</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
@@ -73,11 +73,16 @@ class BadgeForm extends React.Component {
               name="twitter"
             />
           </div>
-          <button onClick={this.handleClick} className="btn btn-primary">
-            Save
-          </button>
+          <div className="btn-group">
+            <Link className="btn btn-secondary" to="/Badges">
+              List Badges
+            </Link>
+            <button onClick={this.handleClick} className="btn btn-primary">
+              Save
+            </button>
+          </div>
         </form>
-      </div>
+      </React.Fragment>
     );
   }
 }
