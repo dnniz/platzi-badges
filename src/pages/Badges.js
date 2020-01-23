@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 
 import api from "../api";
 import "./styles/Badges.css";
-import confLogo from "../images/badge-header.svg";
 import BadgesList from "../components/BadgesList";
+import PageLoad from "../components/PageLoad";
+import BadgeHeroes from "../components/BadgeHeroes";
+import NotFound from "../components/NotFound";
 
 class Badges extends React.Component {
   constructor(props) {
@@ -20,25 +22,23 @@ class Badges extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <p>Loading...</p>;
+      return (
+        <React.Fragment>
+          <BadgeHeroes />
+          <PageLoad />
+        </React.Fragment>
+      );
     }
     if (this.state.error) {
-      return `Error: ${this.state.error.message}`;
+      return (
+        <NotFound error={this.state.error} message={this.state.error.message} />
+      );
+      // return `Error: ${this.state.error.message}`;
     }
     console.log("2/4. render()");
     return (
       <React.Fragment>
-        <div className="Badges">
-          <div className="Badges__hero">
-            <div className="Badges__container">
-              <img
-                className="Badges_conf-logo"
-                src={confLogo}
-                alt="logo conf"
-              />
-            </div>
-          </div>
-        </div>
+        <BadgeHeroes />
         <div className="Badges__container">
           <div className="Badges__buttons">
             <Link to="/badges/new" className="btn btn-primary">
