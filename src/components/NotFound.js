@@ -8,8 +8,6 @@ function NotFound() {
     <div className="notFound">
       <div className="container">
         <div className="row">
-          {/* d-none d-md-block */}
-          {/* <div className="col"></div> */}
           <div className="offset-md-2 col-md-8 text-center">
             <h1>404: Not Found</h1>
             <p>¡Ups! La página solicitada no fue encontrada</p>
