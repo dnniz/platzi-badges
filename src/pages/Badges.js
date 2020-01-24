@@ -7,6 +7,7 @@ import BadgesList from "../components/BadgesList";
 import PageLoad from "../components/PageLoad";
 import BadgeHeroes from "../components/BadgeHeroes";
 import NotFound from "../components/NotFound";
+import confLogo from "../images/badge-header.svg";
 
 class Badges extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Badges extends React.Component {
     if (this.state.loading) {
       return (
         <React.Fragment>
-          <BadgeHeroes />
+          <BadgeHeroes logo={confLogo} />
           <PageLoad />
         </React.Fragment>
       );
@@ -33,12 +34,11 @@ class Badges extends React.Component {
       return (
         <NotFound error={this.state.error} message={this.state.error.message} />
       );
-      // return `Error: ${this.state.error.message}`;
     }
     console.log("2/4. render()");
     return (
       <React.Fragment>
-        <BadgeHeroes />
+        <BadgeHeroes logo={confLogo} />
         <div className="Badges__container">
           <div className="Badges__buttons">
             <Link to="/badges/new" className="btn btn-primary">

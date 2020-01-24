@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "../components/styles/Badge.css";
+
 class BadgeForm extends React.Component {
   handleChange = e => {
     this.setState({
@@ -12,17 +14,11 @@ class BadgeForm extends React.Component {
     console.log("Button was click");
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log("Form was Submitted");
-    console.log(this.state);
-  };
-
   render() {
     return (
       <React.Fragment>
         <h1>New Attendant</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input

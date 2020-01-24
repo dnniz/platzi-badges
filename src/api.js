@@ -26,9 +26,6 @@ const api = {
     list() {
       if (Math.random() > 0.3) return callApi("/badges");
       else throw new Error("Not Found");
-      // throw new Error("Not Found");
-      // return [];
-      // return callApi("/badges");
     },
     create(badge) {
       return callApi(`/badges`, {
