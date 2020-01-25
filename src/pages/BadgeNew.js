@@ -7,10 +7,11 @@ import BadgeHeroes from "../components/BadgeHeroes";
 import confLogo from "../images/platziconf-logo.svg";
 import api from "../api";
 import md5 from "md5";
+import PageLoad from "../components/PageLoad";
 
 class BadgeNew extends React.Component {
   state = {
-    loading: true,
+    loading: null,
     error: null,
     data: undefined,
     form: {
@@ -48,6 +49,15 @@ class BadgeNew extends React.Component {
   };
 
   render() {
+    if (this.state.loading) {
+      return (
+        <React.Fragment>
+          <BadgeHeroes logo={confLogo} />
+          <PageLoad />
+        </React.Fragment>
+      );
+    }
+
     return (
       <React.Fragment>
         <BadgeHeroes logo={confLogo} />
