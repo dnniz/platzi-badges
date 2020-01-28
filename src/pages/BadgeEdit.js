@@ -9,7 +9,7 @@ import api from "../api";
 import md5 from "md5";
 import PageLoad from "../components/PageLoad";
 
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
   state = {
     loading: null,
     error: null,
@@ -90,4 +90,4 @@ class BadgeNew extends React.Component {
   }
 }
 
-export default BadgeNew;
+export default BadgeEdit;

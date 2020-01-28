@@ -70,14 +70,17 @@ class BadgeForm extends React.Component {
             />
           </div>
           <div className="btn-group">
-            <Link className="btn btn-secondary" to="/Badges">
+            {/* <Link className="btn btn-secondary" to="/Badges">
               List Badges
-            </Link>
+            </Link> */}
             <button onClick={this.handleClick} className="btn btn-primary">
               Save
             </button>
           </div>
         </form>
+        {this.props.error && (
+          <p className="text-danger">{this.props.error.message}</p>
+        )}
       </React.Fragment>
     );
   }

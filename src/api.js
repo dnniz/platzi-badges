@@ -28,10 +28,14 @@ const api = {
       else throw new Error("Not Found");
     },
     create(badge) {
-      return callApi(`/badges`, {
-        method: "POST",
-        body: JSON.stringify(badge)
-      });
+      if (Math.random() > 0.3) {
+        return callApi(`/badges`, {
+          method: "POST",
+          body: JSON.stringify(badge)
+        });
+      } else {
+        throw new Error("Not Found");
+      }
     },
     read(badgeId) {
       return callApi(`/badges/${badgeId}`);

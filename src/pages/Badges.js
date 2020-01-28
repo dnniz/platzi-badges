@@ -21,6 +21,11 @@ class Badges extends React.Component {
     };
   }
 
+  handleRedirectEdit = badgeId => {
+    console.log(badgeId);
+    this.props.history.push(`/badges/${badgeId}/edit`);
+  };
+
   render() {
     if (this.state.loading) {
       return (
@@ -45,11 +50,10 @@ class Badges extends React.Component {
               New Badge
             </Link>
           </div>
-          <div className="Badges__list">
-            <div className="Badges__container">
-              <BadgesList badges={this.state.data} />
-            </div>
-          </div>
+          <BadgesList
+            badges={this.state.data}
+            redirectEdit={this.handleRedirectEdit}
+          />
         </div>
       </React.Fragment>
     );

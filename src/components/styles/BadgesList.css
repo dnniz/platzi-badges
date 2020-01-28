@@ -1,6 +1,6 @@
-/* .BadgesList ul>li {
+.BadgesList ul>li {
   margin-bottom: 1rem;
-} */
+}
 
 .BadgesListItem {
   background: #ffffff;
@@ -11,16 +11,9 @@
   margin-bottom: 1rem;
   border-radius: 8px8px8px8px;
   padding: 1rem0;
+  cursor: pointer;
 }
 
-/* .BadgesListItem__avatar {
-  border-radius: 50%;
-  background: #a3a3a3;
-  margin-right: 0.5rem;
-  width: 80px;
-  height: 80px;
-}
- */
 
 .Badge__section-name-list {
   background: #ffffff;
